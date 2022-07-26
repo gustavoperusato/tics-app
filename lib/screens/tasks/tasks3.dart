@@ -1,18 +1,17 @@
 // ignore_for_file: non_constant_identifier_names, prefer_typing_uninitialized_variables, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, library_private_types_in_public_api, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:newapp/screens/preview_image.dart';
-import 'package:newapp/screens/complete_task.dart';
+import 'package:newapp/screens/tasks/tasks3_0.dart';
 
-class SubTask extends StatefulWidget {
+class Tasks3 extends StatefulWidget {
   final List<Color> ColorList;
 
-  SubTask({required this.ColorList});
+  Tasks3({required this.ColorList});
   @override
-  _SubTaskState createState() => _SubTaskState();
+  _Tasks3State createState() => _Tasks3State();
 }
 
-class _SubTaskState extends State<SubTask> {
+class _Tasks3State extends State<Tasks3> {
   final List_Item = [
     {
       'pic': 'assets/img/1.jpg',
@@ -41,10 +40,10 @@ class _SubTaskState extends State<SubTask> {
       body: ListView.builder(
         itemCount: List_Item.length,
         itemBuilder: (BuildContext context, int i) {
-          return Product(
+          return Product3(
             product_image: List_Item[i]['pic'],
             task_color: widget.ColorList[i],
-            task: List_Item[i],
+            task: i,
           );
         },
       ),
@@ -52,12 +51,12 @@ class _SubTaskState extends State<SubTask> {
   }
 }
 
-class Product extends StatelessWidget {
+class Product3 extends StatelessWidget {
   final product_image;
   final task;
   final task_color;
 
-  Product({this.product_image, this.task, this.task_color});
+  Product3({this.product_image, this.task, this.task_color});
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -66,9 +65,19 @@ class Product extends StatelessWidget {
         child: Material(
           child: InkWell(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => CompleteTask(task: task)));
-              // PreviewImage(picDetails_view: product_image)));
+              if (task == 3) {
+                Navigator.of(context).push(MaterialPageRoute(
+                  // ignore: prefer_const_literals_to_create_immutables
+                  builder: (context) => Tasks3_0(ColorList: [
+                    Colors.yellow,
+                    Colors.yellow,
+                    Colors.yellow,
+                    Colors.yellow,
+                  ]),
+                ));
+              } else {
+                taskIncorrect(context);
+              }
             },
             child: GridTile(
               child: Container(
@@ -80,6 +89,23 @@ class Product extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Future<dynamic> taskIncorrect(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Impossível prosseguir'),
+        content: const Text('Você deve seguir a ordem das tarefas!'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Voltar ao app'),
+          ),
+        ],
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       ),
     );
   }

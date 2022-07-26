@@ -2,10 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:newapp/screens/activities.dart';
-import 'package:newapp/screens/subtask.dart';
-import 'package:newapp/widgets/welcomeScreen.dart';
-import '../widgets/mutebutton.dart';
+import 'package:newapp/screens/tasks/tasks0.dart';
+import 'package:newapp/screens/welcomeText.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -87,7 +85,8 @@ class _HomePageState extends State<HomePage> {
             if (index == 2) {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => SubTask(
+                  builder: (context) => Tasks0(
+                    // ignore: prefer_const_literals_to_create_immutables
                     ColorList: [
                       Colors.yellow,
                       Colors.yellow,

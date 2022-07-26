@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:newapp/screens/homepage copy.dart';
+import 'package:newapp/screens/homepage.dart';
 
 class ActivitiesScreen extends StatefulWidget {
   const ActivitiesScreen({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class ActivitiesScreen extends StatefulWidget {
 }
 
 class _ActivitiesScreenState extends State<ActivitiesScreen> {
-  var _currentIndex = 1;
+  var cIndex = 1;
 
   final tabs = [
     const Center(child: Text('')),
@@ -38,7 +38,7 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
 
   BottomNavigationBar ActivitiesBottomNav(BuildContext context) {
     return BottomNavigationBar(
-      currentIndex: _currentIndex,
+      currentIndex: cIndex,
       type: BottomNavigationBarType.fixed,
       iconSize: 40,
       items: const [

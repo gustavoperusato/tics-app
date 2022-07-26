@@ -72,6 +72,10 @@ flutter:
     - assets/img/2.jpg
     - assets/img/3.jpg
     - assets/img/4.jpg
+    - assets/img/5.jpg
+    - assets/img/6.jpg
+    - assets/img/7.jpg
+    - assets/img/8.jpg
     - assets/img/task_complete.png
     - assets/img/task_incomplete.png
 

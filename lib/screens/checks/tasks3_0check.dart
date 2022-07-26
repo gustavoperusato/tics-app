@@ -2,17 +2,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:newapp/screens/preview_image.dart';
-import 'package:newapp/screens/subtask.dart';
+import '../tasks/tasks3_0.dart';
 
-class CompleteTask extends StatefulWidget {
+class Tasks3_0Check extends StatefulWidget {
   final task;
 
-  CompleteTask({this.task});
+  Tasks3_0Check({this.task});
   @override
-  _CompleteTaskState createState() => _CompleteTaskState();
+  _Tasks3_0CheckState createState() => _Tasks3_0CheckState();
 }
 
-class _CompleteTaskState extends State<CompleteTask> {
+class _Tasks3_0CheckState extends State<Tasks3_0Check> {
   final List_Item = [
     {
       'pic': 'assets/img/task_complete.png',
@@ -38,7 +38,7 @@ class _CompleteTaskState extends State<CompleteTask> {
       body: ListView.builder(
         itemCount: List_Item.length,
         itemBuilder: (BuildContext context, int i) {
-          return Alternative(
+          return Alternative1(
             product_image: List_Item[i]['pic'],
             image_color: List_Colors[i],
             task: widget.task,
@@ -49,12 +49,12 @@ class _CompleteTaskState extends State<CompleteTask> {
   }
 }
 
-class Alternative extends StatelessWidget {
+class Alternative1 extends StatelessWidget {
   final product_image;
   final image_color;
   final task;
 
-  Alternative({this.product_image, this.image_color, this.task});
+  Alternative1({this.product_image, this.image_color, this.task});
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -65,9 +65,19 @@ class Alternative extends StatelessWidget {
             onTap: () {
               if (product_image == 'assets/img/task_complete.png') {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => SubTask(ColorList: [
-                          Colors.yellow,
+                    builder: (context) => Tasks3_0(ColorList: [
                           Colors.green,
+                          Colors.green,
+                          Colors.yellow,
+                          Colors.yellow,
+                        ])));
+              } else {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => Tasks3_0(ColorList: [
+                          // TODO
+
+                          Colors.green,
+                          Colors.yellow,
                           Colors.yellow,
                           Colors.yellow,
                         ])));
