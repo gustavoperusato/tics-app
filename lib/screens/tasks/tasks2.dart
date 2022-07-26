@@ -65,7 +65,7 @@ class Product2 extends StatelessWidget {
         child: Material(
           child: InkWell(
             onTap: () {
-              if (task == 1) {
+              if (task == 2) {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => Tasks2Check(task: task)));
               } else {
