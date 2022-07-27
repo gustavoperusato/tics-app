@@ -1,14 +1,15 @@
 // ignore_for_file: non_constant_identifier_names, prefer_typing_uninitialized_variables, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, library_private_types_in_public_api, prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import
 
 import 'package:flutter/material.dart';
-import 'package:newapp/screens/preview_image.dart';
+import '../alternatives/alternative0.dart';
 import '../tasks/tasks0.dart';
 import '../tasks/tasks1.dart';
 
 class Tasks0Check extends StatefulWidget {
   final task;
+  final task_image;
 
-  Tasks0Check({this.task});
+  Tasks0Check({this.task, this.task_image});
   @override
   _Tasks0CheckState createState() => _Tasks0CheckState();
 }
@@ -43,55 +44,9 @@ class _Tasks0CheckState extends State<Tasks0Check> {
             product_image: List_Item[i]['pic'],
             image_color: List_Colors[i],
             task: widget.task,
+            task_image: widget.task_image,
           );
         },
-      ),
-    );
-  }
-}
-
-class Alternative0 extends StatelessWidget {
-  final product_image;
-  final image_color;
-  final task;
-
-  Alternative0({this.product_image, this.image_color, this.task});
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Hero(
-        tag: product_image,
-        child: Material(
-          child: InkWell(
-            onTap: () {
-              if (product_image == 'assets/img/task_complete.png') {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Tasks1(ColorList: [
-                          Colors.green,
-                          Colors.yellow,
-                          Colors.yellow,
-                          Colors.yellow,
-                        ])));
-              } else {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Tasks0(ColorList: [
-                          Colors.yellow,
-                          Colors.yellow,
-                          Colors.yellow,
-                          Colors.yellow,
-                        ])));
-              }
-            },
-            child: GridTile(
-              child: Container(
-                  color: image_color,
-                  padding: EdgeInsets.all(16),
-                  child: Image.asset(
-                    product_image,
-                  )),
-            ),
-          ),
-        ),
       ),
     );
   }

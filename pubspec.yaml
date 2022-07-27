@@ -38,6 +38,7 @@ dependencies:
   flutter_svg: ^1.1.0
   flutter_sound: ^9.2.13
   volume: ^1.0.1
+  audioplayers: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -76,8 +77,35 @@ flutter:
     - assets/img/6.jpg
     - assets/img/7.jpg
     - assets/img/8.jpg
+    - assets/img/9.jpg
+    - assets/img/10.jpg
+    - assets/img/11.jpg
+    - assets/img/12.jpg
+    - assets/img/13.jpg
+    - assets/img/14.jpg
+    - assets/img/15.jpg
+    - assets/img/16.jpg
+    - assets/img/17.jpg
+    - assets/img/18.jpg
+    - assets/img/19.jpg
+    - assets/img/20.jpg
+    - assets/img/21.jpg
+    - assets/img/22.jpg
+    - assets/img/23.jpg
+    - assets/img/24.jpg
+    - assets/img/25.jpg
+    - assets/img/26.jpg
+    - assets/img/27.jpg
+    - assets/img/28.jpg
+    - assets/img/29.jpg
+    - assets/img/30.jpg
+    - assets/img/31.jpg
+    - assets/img/32.jpg
     - assets/img/task_complete.png
     - assets/img/task_incomplete.png
+    - assets/gif/clapping-hands.gif
+    - assets/gif/fireworks.gif
+    - assets/audio/applause.wav
 
   fonts:
     - family: Montserrat Regular

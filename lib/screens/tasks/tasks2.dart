@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, prefer_typing_uninitialized_variables, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, library_private_types_in_public_api, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import '../../widgets/taskIncorrect.dart';
 import '../checks/tasks2check.dart';
 
 class Tasks2 extends StatefulWidget {
@@ -67,7 +68,10 @@ class Product2 extends StatelessWidget {
             onTap: () {
               if (task == 2) {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Tasks2Check(task: task)));
+                    builder: (context) => Tasks2Check(
+                          task: task,
+                          task_image: product_image,
+                        )));
               } else {
                 taskIncorrect(context);
               }
@@ -82,23 +86,6 @@ class Product2 extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Future<dynamic> taskIncorrect(BuildContext context) {
-    return showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Impossível prosseguir'),
-        content: const Text('Você deve seguir a ordem das tarefas!'),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Voltar ao app'),
-          ),
-        ],
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       ),
     );
   }
